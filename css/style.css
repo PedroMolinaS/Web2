@@ -1,0 +1,538 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap");
+
+:root {
+  --color-primary: #444cf7;
+  --color-title: #000;
+  --align-title: left;
+  --padding-container: 6.25rem 0;
+  --width-container: 90%;
+  --max-width-container: 1200px;
+  --color-btn: #444cf7;
+  --text-btn: #fff;
+  --padding-btn: 1.25rem 2.18rem;
+  --height-shape: 18rem;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #e5e5f7;
+  opacity: 1;
+  background-image: radial-gradient(#444cf7 0.75px, transparent 0.75px),
+    radial-gradient(#444cf7 0.75px, #e5e5f7 0.75px);
+  background-size: 30px 30px;
+  background-position: 0 0, 15px 15px;
+}
+
+.container {
+  width: var(--width-container);
+  max-width: var(--max-width-container);
+  padding: var(--padding-container);
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* HEADER */
+
+.hero {
+  height: 100vh;
+  min-height: 31.25rem;
+  position: relative;
+  --padding-container: 5rem 0;
+}
+.hero::after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: var(--height-shape);
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  z-index: -1;
+  clip-path: polygon(0 100%, 100% 0, 100% 100%);
+}
+.hero__container {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  place-items: center;
+  gap: 1.25rem;
+}
+.hero__img {
+  width: 95%;
+}
+.hero__title {
+  font-size: 4rem;
+}
+.hero__copy {
+  font-size: 1.5rem;
+  margin: 1.2rem 0;
+}
+.hero__cta {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--text-btn);
+  padding: var(--padding-btn);
+  background-color: var(--color-btn);
+  margin: 1.2rem 0;
+  font-size: 1.5rem;
+}
+
+/* MAIN */
+.main {
+  background-color: #fff;
+}
+.title {
+  font-size: 2.5rem;
+  text-align: var(--align-title);
+  color: var(--color-title);
+}
+.title--border::after {
+  content: "";
+  display: block;
+  width: 6.25rem;
+  margin-top: 1.25rem;
+  height: 0.25rem;
+  background-color: var(--color-primary);
+}
+
+.cta {
+  display: inline-block;
+  background-color: var(--color-btn);
+  color: var(--text-btn);
+  padding: var(--padding-btn);
+  text-decoration: none;
+  border-radius: 0.2rem;
+}
+
+/* INSTRUCTOR */
+.instructor {
+  text-align: center;
+  border-bottom: 2px solid #ccc;
+  --padding-container: 1.875rem 0 3.75rem;
+}
+
+.instructor__container {
+  width: 70%;
+  margin: 0 auto;
+}
+.instructor__name {
+  margin: 1.25rem 0;
+  font-size: 2rem;
+}
+.instructor__tag {
+  font-size: 1.2rem;
+  color: var(--color-primary);
+  margin-bottom: 1.25rem;
+}
+.instructor__paragraph {
+  line-height: 1.5;
+  /* text-align: left; */
+  font-style: italic;
+  color: #615a5a;
+}
+.instructor__img {
+  width: 12.5rem;
+  height: 12.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top;
+}
+
+/* ABOUT */
+.about {
+  display: grid;
+  grid-template-columns: 5fr 4fr;
+  place-items: center;
+}
+.about__course {
+  width: 90%;
+}
+.about__paragraph {
+  margin: 20px 0;
+  line-height: 1.5;
+  font-weight: 300;
+}
+.about__picture {
+  text-align: center;
+}
+.about__img {
+  width: 95%;
+}
+
+/* CARD */
+.card {
+  background-color: #f2f2f2;
+}
+.card__copy {
+  margin-top: 1.25rem;
+  margin-bottom: 3rem;
+}
+.card__container {
+  width: 99%;
+  margin: 0 auto;
+  margin-top: 3.75rem;
+
+  display: grid;
+  gap: 1.25rem;
+  grid-template-areas:
+    ".     card2 .  "
+    "card1 card2 card3"
+    "card1 card4 card3"
+    ".     card4 .  ";
+  text-align: center;
+}
+.card__item {
+  background-color: #fff;
+  padding: 3rem 1rem;
+  border-top: 0.4rem solid #667eea;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+}
+.card__item:nth-child(1) {
+  grid-area: card1;
+}
+.card__item:nth-child(2) {
+  grid-area: card2;
+}
+.card__item:nth-child(3) {
+  grid-area: card3;
+}
+.card__item:nth-child(4) {
+  grid-area: card4;
+}
+.card__picture {
+  background-color: var(--color-primary);
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+}
+.card__img {
+  display: inline-block;
+  width: 70%;
+  padding: 0.5rem;
+  margin: auto;
+  filter: invert(100%);
+}
+.card__item:nth-child(4) .card__img {
+  filter: invert(0%);
+}
+.card__title {
+  margin: 1.25rem;
+  font-size: 1.5rem;
+}
+.card__paragrap {
+  line-height: 1.5;
+}
+
+/* COURSE */
+.course {
+  --color-title: #fff;
+  --color-btn: #fff;
+  --text-btn: #444cf7;
+  color: var(--color-title);
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+}
+.course__picture {
+  grid-column: 3 / -1;
+  grid-row: 1 / -1;
+}
+.course__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.course__about {
+  width: 97%;
+  margin: 0 auto;
+  background-color: var(--color-primary);
+  padding: 1.875rem;
+  align-self: center;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+  grid-column: 1 / 4;
+  grid-row: 2 /-2;
+}
+.course__paragraph {
+  line-height: 1.5;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.course__picture--right {
+  grid-column: 1 / span 3;
+}
+.course__about--left {
+  grid-column: 3 / span 3;
+}
+
+/* FOOTER */
+.footer {
+  position: relative;
+}
+.footer__container.container {
+  margin-bottom: 0;
+}
+.footer::before {
+  content: "";
+  position: absolute;
+  height: var(--height-shape);
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  clip-path: polygon(50% 25%, 0 0, 100% 0);
+}
+.footer__contact {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  place-items: center;
+  border-bottom: 2px solid #999;
+}
+.footer__copy {
+  margin: 1rem 0;
+  font-weight: 300;
+}
+.footer__social {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+.footer__social a {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  border: 1px solid #000;
+  align-self: center;
+  margin-right: 2rem;
+  margin-bottom: 1rem;
+  display: flex;
+}
+.footer__social a img {
+  margin: auto;
+  cursor: pointer;
+}
+.footer__ico {
+  height: 2rem;
+}
+.figure__picture {
+  padding: 2rem;
+  width: 50%;
+  text-align: center;
+}
+.footer__img {
+  height: 15rem;
+}
+.footer__copyright {
+  margin-top: 2rem;
+  text-align: center;
+  letter-spacing: 0.1rem;
+}
+.footer__copyright::after {
+  content: " pedro.acms@gmail.com";
+  font-weight: 600;
+}
+
+/* TABLET 768 */
+@media screen and (max-width: 768px) {
+  :root {
+    --padding-container: 5.25rem 0;
+    --width-container: 90%;
+    --padding-btn: 1rem 1.5rem;
+    --height-shape: 14rem;
+  }
+
+  /* HEADER */
+  .hero__container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr 1fr;
+    /* place-items: center; */
+    /* gap: 1.25rem; */
+  }
+  .hero__title {
+    font-size: 3rem;
+  }
+  .hero__copy {
+    font-size: 1.2rem;
+    margin: 1rem 0;
+  }
+  .hero__cta {
+    margin: 1rem 0;
+    font-size: 1.2rem;
+  }
+  .hero__img {
+    order: -1;
+    height: 95%;
+  }
+
+  /* ABOUT */
+  .about {
+    grid-template-columns: 1fr;
+    grid-template-rows: max-content 1fr;
+    gap: 1rem;
+  }
+  .about__course {
+    width: 100%;
+    text-align: center;
+  }
+  .about__picture {
+    order: -1;
+  }
+  .about__img {
+    width: 100%;
+  }
+
+  /* CARD */
+  .card__container {
+    width: 99%;
+    margin-top: 3rem;
+    gap: 1rem;
+    /* grid-template-columns: 1fr 1fr; */
+    /* grid-template-rows: repeat(5, 1fr); */
+    grid-template-areas:
+      "card1 ."
+      "card1 card2"
+      "card3 card2"
+      "card3 card4"
+      ".     card4";
+  }
+
+  /* COURSE */
+  .course {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  .course__about {
+    /* width: 100%; */
+    grid-column: 1 / 5;
+  }
+  .course__picture {
+    grid-column: 2 / -1;
+  }
+  
+  .course__picture--right {
+    grid-column: 1 / span 5;
+  }
+  .course__about--left {
+    grid-column: 2 / -1;
+  }
+
+  /* FOOTER */
+  .footer__contact {
+    grid-template-columns: 1fr;
+  }
+.footer__texts{
+  order: 1;
+  --align-title: center;
+  text-align: center;
+  
+}
+.footer__social {
+  justify-content:space-evenly;
+}
+
+}
+
+/* TABLE 500 */
+@media screen and (max-width: 500px){
+  :root {
+    --align-title: center;
+    --padding-container: 2rem 0;
+    --width-container: 95%;
+    --padding-btn: 0.8rem 0;
+    --height-shape: 10rem;
+  }
+
+  .title{
+    font-size: 1.8rem;
+  }
+  .cta{
+    display: block;
+  }
+
+  /* HEADER */
+  .hero__container {
+    --padding-container:2.8rem 0;
+  }
+  .hero__texts{
+    text-align: center;
+  }
+  .hero__title {
+    font-size: 2rem;
+  }
+  .hero__copy {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+  }
+  .hero__cta {
+    display: block;
+    font-size: 1rem;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  /* INSTRUCTOR */
+  .instructor__container {
+    width: 95%;
+    margin: 0 auto;
+  }
+  .instructor__img {
+    width: 8rem;
+    height: 8rem;
+  }
+
+    /* CARD */
+    .card__container {
+      width: 99%;
+      margin-top: 3rem;
+      gap: 1rem;
+      grid-template-areas:
+        "card1"
+        "card2"
+        "card3"
+        "card4";
+    }
+  
+    /* COURSE */
+    .course{
+      grid-template-columns: 1fr;
+      --padding-container: 5rem 0 2rem;
+    }
+    .course-modifier{
+      --padding-container: 0 0 2rem;
+    }
+    .course__about{
+      width:95%;
+      text-align: center;
+    }
+    .course__picture{
+      display:none
+    }
+    .course__about{
+      grid-column: 1 / -1;
+      grid-row: 1 / -1;
+    }
+    
+    /* FOOTER */
+    .figure__picture {
+      padding: 0;
+      width: 100%;
+      text-align: center;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
